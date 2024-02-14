@@ -1,2 +1,2 @@
-# spring-webMVC-superMarket
-Spring Web MVC Super Market
+# spring-webMVC-Point Of Sale
+
