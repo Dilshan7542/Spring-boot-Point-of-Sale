@@ -24,4 +24,8 @@ public class Customer {
     @ToString.Exclude
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "customer")
     private List<Orders> orderDetailList;
+
+    public Customer(String customerID) {
+        this.customerID = customerID;
+    }
 }

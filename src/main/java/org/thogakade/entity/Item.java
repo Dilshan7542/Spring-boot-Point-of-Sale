@@ -20,6 +20,10 @@ public class Item implements Serializable {
    private int qty;
    private double unitPrice;
    @ToString.Exclude
-   @OneToMany(fetch = FetchType.EAGER,orphanRemoval = true,mappedBy = "item")
+   @OneToMany(fetch = FetchType.LAZY,mappedBy = "item")
   private List<OrderDetail> orderDetailList;
+
+   public Item(String itemCode) {
+      this.itemCode = itemCode;
+   }
 }

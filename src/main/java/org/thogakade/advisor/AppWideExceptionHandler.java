@@ -23,6 +23,7 @@ public class AppWideExceptionHandler {
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)//OPTION 2: we can use states code changed (500)
         @ExceptionHandler({Exception.class})
     public ResponseUtil getExceptionHandler(Exception e){
+        e.printStackTrace();
         return new ResponseUtil(e.getLocalizedMessage(),"Failed",null);
     }
 }
