@@ -1,5 +1,6 @@
 package org.thogakade.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -27,6 +28,7 @@ public class Orders implements Serializable {
     @JoinColumn(name = "customerID")
     private Customer customer;
     @ToString.Exclude
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "orders",  fetch = FetchType.EAGER,orphanRemoval = true)
     private List<OrderDetail> orderDetailList;
 
